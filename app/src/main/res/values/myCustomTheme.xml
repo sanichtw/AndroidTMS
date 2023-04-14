@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="myCustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowTitleBackgroundStyle">@style/MyWindowTitleBackground</item>
+    </style>
+
+    <style name="MyWindowTitleBackground">
+        <item name="android:background">@color/white</item>
+    </style>
+</resources>
