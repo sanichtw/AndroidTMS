@@ -1,14 +1,13 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -32,27 +31,64 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
+        val button = findViewById<Button>(R.id.button)
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+        // Set the listener to the button
+        button.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
         }
     }
+}
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+// create first class
+open class TestA {
+    open val name = "Nikita"
+
+    open fun getNameS(): String {
+        return name
+    }
+
+    open fun greets() {
+        println("Hello ${getNameS()}!")
+    }
+
+    open fun bye() {
+        println("Bye ${getNameS()}!")
+    }
+}
+
+// create second class
+open class TestB: TestA() {
+    override val name = "Nikitos"
+
+    override fun getNameS(): String {
+        return name
+    }
+
+    override fun greets() {
+        println("Zdarova, ${getNameS()}!")
+    }
+
+    override fun bye() {
+        println("Davaj, ydachi ${getNameS()}!")
+    }
+}
+
+// create third class
+open class TestC: TestB() {
+    override var name = "Unknown"
+
+    fun setName() {
+        name = "Random name"
+    }
+
+    override fun getNameS(): String {
+        return super.getNameS()
+    }
+
+    override fun greets() {
+        println("Zdarova kak tebya tam..")
     }
 }
