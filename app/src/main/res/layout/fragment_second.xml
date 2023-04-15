@@ -7,18 +7,43 @@
     tools:context=".SecondFragment">
 
     <Button
-        android:id="@+id/back_button"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/back_button"
         android:background="@drawable/login_button_rounded"
-        android:backgroundTint="@color/login_form_background"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="501dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/app_background"
+        android:text="@string/next_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintHorizontal_bias="0.5"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="290dp"
+        android:layout_height="27dp"
+        android:backgroundTint="@color/app_background"
+        android:entries="@array/spinner_services"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="304dp"
+        android:layout_height="307dp"
+        android:entries="@array/listView_services"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.562" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

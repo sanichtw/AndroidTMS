@@ -2,10 +2,12 @@
 <resources>
     <string name="first_fragment_label">Домашнее задание</string>
     <string name="second_fragment_label">Домашнее задание</string>
+    <string name="third_fragment_label">Домашнее задание</string>
     <string name="app_name">Домашнее задание</string>
     <string name="authorization">Авторизация</string>
     <string name="action_settings">Настройки</string>
     <string name="rememberMe_checkbox">Запомнить</string>
     <string name="login_button">Войти</string>
+    <string name="next_button">Дальше</string>
     <string name="back_button">Назад</string>
 </resources>
