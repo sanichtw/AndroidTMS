@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="app_background">#D6D1D1</color>
     <color name="login_inputs_text">#BCBABA</color>
+    <color name="divider">#BCBABA</color>
 </resources>

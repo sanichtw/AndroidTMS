@@ -1,4 +1,4 @@
-package com.example.myapplication.RecyclerAdapter
+package com.example.myapplication.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +18,7 @@ class MyRecyclerAdapter(private val items: List<String>):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.recycler_item, parent, false)
+            .inflate(R.layout.recycler_items, parent, false)
         return MyViewHolder(itemView)
     }
 

@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.databinding.FragmentSecondBinding
+import com.example.myapplication.databinding.FragmentNewsBinding
 
-class SecondFragment : Fragment() {
+class NewsFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,7 +19,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentNewsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -31,7 +31,7 @@ class SecondFragment : Fragment() {
         initListView()
 
         binding.nextButton.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_RecyclerViewFragment)
+            findNavController().navigate(R.id.action_NewsFragment_to_RecyclerViewFragment)
         }
     }
 
@@ -55,7 +55,6 @@ class SecondFragment : Fragment() {
             R.array.listView_services,
             android.R.layout.simple_list_item_1
         )
-
         // connecting the adapter and the listView
         binding.listView.adapter = adapter
     }
