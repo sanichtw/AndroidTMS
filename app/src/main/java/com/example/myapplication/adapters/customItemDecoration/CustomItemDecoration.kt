@@ -1,4 +1,4 @@
-package com.example.myapplication.adapters.CustomItemDecoration
+package com.example.myapplication.adapters.customItemDecoration
 
 import android.content.Context
 import android.graphics.Canvas

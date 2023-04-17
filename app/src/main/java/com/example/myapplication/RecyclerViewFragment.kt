@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.adapters.AccountTransactionsAdapter
-import com.example.myapplication.adapters.CustomItemDecoration.CustomItemDecoration
-import com.example.myapplication.adapters.MyRecyclerAdapter
+import com.example.myapplication.adapters.customItemDecoration.CustomItemDecoration
 import com.example.myapplication.databinding.FragmentRecyclerViewBinding
 import com.example.myapplication.model.MyData
 
