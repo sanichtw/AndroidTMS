@@ -4,6 +4,7 @@
     <string name="second_fragment_label">Домашнее задание</string>
     <string name="third_fragment_label">Домашнее задание</string>
     <string name="app_name">Домашнее задание</string>
+    <string name="splash_screen">Заставка</string>
     <string name="authorization">Авторизация</string>
     <string name="action_settings">Настройки</string>
     <string name="rememberMe_checkbox">Запомнить</string>

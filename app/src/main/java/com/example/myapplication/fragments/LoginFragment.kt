@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.fragments
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentLoginBinding
 
 
@@ -42,7 +43,10 @@ class LoginFragment : Fragment() {
 
         // Tracking text changes in the password input
         passwordInput.addTextChangedListener(object : TextWatcher {
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            
+            override fun afterTextChanged(s: Editable) {
                 val password = passwordInput.text.toString()
 
                 // We check whether the password meets the specified conditions and if
@@ -51,8 +55,6 @@ class LoginFragment : Fragment() {
             }
 
             private val isValidPassword = {password: String -> password.length >= 8 }
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-            override fun afterTextChanged(s: Editable) {}
         })
     }
 }

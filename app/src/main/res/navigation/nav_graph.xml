@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.example.myapplication.LoginFragment"
+        android:name="com.example.myapplication.fragments.LoginFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_login">
 
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/NewsFragment"
-        android:name="com.example.myapplication.NewsFragment"
+        android:name="com.example.myapplication.fragments.NewsFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_news">
 
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/RecyclerViewFragment"
-        android:name="com.example.myapplication.RecyclerViewFragment"
+        android:name="com.example.myapplication.fragments.RecyclerViewFragment"
         android:label="@string/third_fragment_label"
         tools:layout="@layout/fragment_recycler_view">
 
@@ -37,5 +37,6 @@
         android:id="@+id/action_RecyclerViewFragment_to_LoginFragment"
         app:destination="@id/LoginFragment" />
     </fragment>
+
 
 </navigation>
