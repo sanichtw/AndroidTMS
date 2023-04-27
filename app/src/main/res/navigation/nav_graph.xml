@@ -8,35 +8,36 @@
     <fragment
         android:id="@+id/LoginFragment"
         android:name="com.example.myapplication.fragments.LoginFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_login">
 
         <action
-            android:id="@+id/action_LoginFragment_to_NewsFragment"
-            app:destination="@id/NewsFragment" />
+            android:id="@+id/action_LoginFragment_to_PaymentsFragment"
+            app:destination="@id/PaymentsFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/NewsFragment"
-        android:name="com.example.myapplication.fragments.NewsFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_news">
-
-        <action
-            android:id="@+id/action_NewsFragment_to_RecyclerViewFragment"
-            app:destination="@id/RecyclerViewFragment" />
-    </fragment>
 
     <fragment
-        android:id="@+id/RecyclerViewFragment"
-        android:name="com.example.myapplication.fragments.RecyclerViewFragment"
-        android:label="@string/third_fragment_label"
-        tools:layout="@layout/fragment_recycler_view">
+        android:id="@+id/PaymentsFragment"
+        android:name="com.example.myapplication.fragments.PaymentsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_payments">
 
     <action
-        android:id="@+id/action_RecyclerViewFragment_to_LoginFragment"
-        app:destination="@id/LoginFragment" />
+        android:id="@+id/action_PaymentsFragment_to_DetailsFragment"
+        app:destination="@id/DetailsFragment" />
     </fragment>
 
+
+    <fragment
+        android:id="@+id/DetailsFragment"
+        android:name="com.example.myapplication.fragments.DetailsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_details">
+
+        <action
+            android:id="@+id/action_DetailsFragment_to_PaymentsFragment"
+            app:destination="@id/PaymentsFragment" />
+    </fragment>
 
 </navigation>

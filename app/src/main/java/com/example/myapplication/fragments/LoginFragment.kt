@@ -37,7 +37,7 @@ class LoginFragment : Fragment() {
         // Set the listener to the login button
         loginButton.setOnClickListener {
             if (loginButton.isEnabled) {
-                findNavController().navigate(R.id.action_LoginFragment_to_NewsFragment)
+                findNavController().navigate(R.id.action_LoginFragment_to_PaymentsFragment)
             }
         }
 
