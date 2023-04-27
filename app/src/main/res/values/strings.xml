@@ -11,5 +11,6 @@
 
     <!-- Strings used for fragments for navigation -->
     <string name="login_button">Sign in</string>
+    <string name="back_button">Back</string>
     <string name="rememberMe_checkbox">Remember</string>
 </resources>

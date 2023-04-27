@@ -5,6 +5,7 @@
     <string name="splash_screen">Splash Screen</string>
     <string name="authorization">Authorization</string>
     <string name="action_settings">Settings</string>
+    <string name="back_button">Back</string>
     <string name="rememberMe_checkbox">Remember</string>
     <string name="login_button">Sign in</string>
     <string name="payment_about_title">About The Payment</string>
