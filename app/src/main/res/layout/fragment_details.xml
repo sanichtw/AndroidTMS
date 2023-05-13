@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#B8B1B1"
     android:padding="5dp"
-    tools:context=".fragments.DetailsFragment">
+    tools:context=".presentation.fragments.AboutPaymentFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -58,8 +58,7 @@
                 android:id="@+id/paymentAboutBody"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/payment_about_body" />
+                android:layout_marginTop="5dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

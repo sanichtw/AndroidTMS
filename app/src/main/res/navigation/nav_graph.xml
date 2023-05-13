@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.example.myapplication.fragments.LoginFragment"
+        android:name="com.example.myapplication.presentation.fragments.LoginFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_login">
 
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/PaymentsFragment"
-        android:name="com.example.myapplication.fragments.PaymentsFragment"
+        android:name="com.example.myapplication.presentation.fragments.PaymentsFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_payments">
 
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/DetailsFragment"
-        android:name="com.example.myapplication.fragments.DetailsFragment"
+        android:name="com.example.myapplication.presentation.fragments.AboutPaymentFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_details">
 

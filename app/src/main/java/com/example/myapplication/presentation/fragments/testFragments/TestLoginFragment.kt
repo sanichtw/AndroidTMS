@@ -1,4 +1,4 @@
-package com.example.myapplication.fragments.testFragments
+package com.example.myapplication.presentation.fragments.testFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.myapplication.R
 
-class TestNewsFragment : Fragment() {
+class TestLoginFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -17,6 +17,7 @@ class TestNewsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test_news, container, false)
+        return inflater.inflate(R.layout.fragment_test_login, container, false)
     }
+
 }

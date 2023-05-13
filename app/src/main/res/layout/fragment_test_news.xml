@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/testNewsFragment"
     android:background="@color/black"
-    tools:context=".fragments.testFragments.TestNewsFragment">
+    tools:context=".presentation.fragments.testFragments.TestNewsFragment">
 
 
     <TextView
