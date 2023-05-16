@@ -11,4 +11,7 @@
     <string name="payment_about_body">Какой-то текст</string>
     <string name="payment_about_image">Картинка платежа</string>
     <string name="test_login_fragment">Test Login</string>
+    <string name="test_news_fragment">Test News Fragment</string>
+    <string name="to_test_login_fragment">To Test Login Fragment</string>
+    <string name="to_test_news_fragment">To News Login Fragment</string>
 </resources>
