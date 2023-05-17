@@ -7,7 +7,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -18,26 +20,11 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//
-//        binding.nextFragmentTest.setOnClickListener {
-//            replaceFragment(fragment = TestLoginFragment())
-//        }
-//
-//        binding.backFragmentTest.setOnClickListener {
-//            replaceFragment(fragment = TestNewsFragment())
-//        }
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
-
-//    private fun replaceFragment(fragment: Fragment) {
-//        val fragmentManager = supportFragmentManager
-//        val fragmentTransaction = fragmentManager.beginTransaction()
-//        fragmentTransaction.replace(R.id.main_fragment_container, fragment)
-//        fragmentTransaction.commit()
-//    }
 }
 
 

@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
@@ -14,18 +14,15 @@ import com.example.myapplication.domain.models.DomainPaymentList
 import com.example.myapplication.presentation.adapters.AccountTransactionsAdapter
 import com.example.myapplication.presentation.adapters.customItemDecoration.CustomItemDecoration
 import com.example.myapplication.presentation.view_models.PaymentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class PaymentsFragment : Fragment() {
     private var _binding: FragmentPaymentsBinding? = null
     private val binding get() = _binding!!
-    private var viewModel: PaymentViewModel? = null
+    private val viewModel: PaymentViewModel by viewModels()
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(owner = this)[PaymentViewModel::class.java]
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +39,7 @@ class PaymentsFragment : Fragment() {
 
     private fun initRecycler() {
         val customItemDecoration = CustomItemDecoration(requireContext())
-        val payments = viewModel?.paymentList?.value ?: DomainPaymentList()
+        val payments = viewModel.paymentList.value ?: DomainPaymentList()
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())

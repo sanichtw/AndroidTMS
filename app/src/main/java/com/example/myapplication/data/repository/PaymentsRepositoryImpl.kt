@@ -1,10 +1,15 @@
 package com.example.myapplication.data.repository
 
 import com.example.myapplication.data.remote.dto.DataPaymentDto
-import com.example.myapplication.data.repository.remote.PaymentsRemoteImpl
+import com.example.myapplication.data.repository.remote.PaymentsRemote
 import com.example.myapplication.domain.repositories.PaymentRepository
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class PaymentsRepositoryImpl: PaymentRepository {
-    override fun getPayments(): List<DataPaymentDto> = PaymentsRemoteImpl().getPayments()
-    override fun getPaymentInfo(): DataPaymentDto = PaymentsRemoteImpl().getPaymentInfo()
+@Singleton
+class PaymentsRepositoryImpl @Inject constructor(
+    private val paymentsRemote: PaymentsRemote
+): PaymentRepository {
+    override fun getPayments(): List<DataPaymentDto> = paymentsRemote.getPayments()
+    override fun getPaymentInfo(): DataPaymentDto = paymentsRemote.getPaymentInfo()
 }
