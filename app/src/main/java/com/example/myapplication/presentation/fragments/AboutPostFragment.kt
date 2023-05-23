@@ -6,23 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.myapplication.databinding.FragmentDetailsBinding
-import com.example.myapplication.domain.models.DomainPayment
-import com.example.myapplication.presentation.view_models.AboutPaymentViewModel
+import com.example.myapplication.databinding.FragmentAboutPostBinding
+import com.example.myapplication.domain.models.DomainPost
+import com.example.myapplication.presentation.view_models.AboutPostViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class AboutPaymentFragment : Fragment() {
-    private lateinit var binding: FragmentDetailsBinding
-    private val viewModel: AboutPaymentViewModel by viewModels()
+class AboutPostFragment : Fragment() {
+    private lateinit var binding: FragmentAboutPostBinding
+    private val viewModel: AboutPostViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDetailsBinding.inflate(inflater, container, false)
+        binding = FragmentAboutPostBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -33,12 +32,12 @@ class AboutPaymentFragment : Fragment() {
     }
 
     private fun initDetailsInfo() {
-        val paymentInfo = viewModel.paymentInfo.value ?: DomainPayment()
+        val paymentInfo = viewModel.postInfo.value ?: DomainPost()
 
         binding.apply {
             paymentAboutTitle.text = paymentInfo.title
             paymentAboutBody.text = paymentInfo.description
-            paymentImage.setImageResource(paymentInfo.image)
+//            paymentImage.setImageResource(paymentInfo.image)
         }
     }
 }

@@ -12,32 +12,32 @@
         tools:layout="@layout/fragment_login">
 
         <action
-            android:id="@+id/action_LoginFragment_to_PaymentsFragment"
-            app:destination="@id/PaymentsFragment" />
+            android:id="@+id/action_LoginFragment_to_PostsFragment"
+            app:destination="@id/PostsFragment" />
     </fragment>
 
 
     <fragment
-        android:id="@+id/PaymentsFragment"
-        android:name="com.example.myapplication.presentation.fragments.PaymentsFragment"
+        android:id="@+id/PostsFragment"
+        android:name="com.example.myapplication.presentation.fragments.PostsFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_payments">
+        tools:layout="@layout/fragment_posts">
 
     <action
-        android:id="@+id/action_PaymentsFragment_to_DetailsFragment"
-        app:destination="@id/DetailsFragment" />
+        android:id="@+id/action_PostsFragment_to_AboutPostFragment"
+        app:destination="@id/AboutPostFragment" />
     </fragment>
 
 
     <fragment
-        android:id="@+id/DetailsFragment"
-        android:name="com.example.myapplication.presentation.fragments.AboutPaymentFragment"
+        android:id="@+id/AboutPostFragment"
+        android:name="com.example.myapplication.presentation.fragments.AboutPostFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_details">
+        tools:layout="@layout/fragment_about_post">
 
         <action
-            android:id="@+id/action_DetailsFragment_to_PaymentsFragment"
-            app:destination="@id/PaymentsFragment" />
+            android:id="@+id/action_AboutPostFragment_to_PaymentsFragment"
+            app:destination="@id/PostsFragment" />
     </fragment>
 
 </navigation>

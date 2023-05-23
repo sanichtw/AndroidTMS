@@ -8,16 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.domain.models.DomainPaymentList
+import com.example.myapplication.domain.models.DomainPost
 
 class AccountTransactionsAdapter(
-    private val items: DomainPaymentList,
+    private val items: List<DomainPost>,
     private val event: (View) -> Unit
     ):
     RecyclerView.Adapter<AccountTransactionsAdapter.CustomViewHolder>(){
 
      class CustomViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.icon)
+//        val imageView: ImageView = itemView.findViewById(R.id.icon)
         val titleTextView: TextView = itemView.findViewById(R.id.title)
         val descriptionTextView: TextView = itemView.findViewById(R.id.description)
     }
@@ -34,14 +34,13 @@ class AccountTransactionsAdapter(
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        val payment = items.payments[position]
-
-        holder.imageView.setImageResource(payment.image)
-        holder.titleTextView.text = payment.title
-        holder.descriptionTextView.text = payment.description
+        holder.apply {
+            titleTextView.text = items[position].title
+            descriptionTextView.text = items[position].publishedAt
+        }
     }
 
     override fun getItemCount(): Int {
-        return items.payments.size
+        return items.size
     }
 }

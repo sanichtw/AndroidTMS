@@ -9,47 +9,52 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
-import com.example.myapplication.databinding.FragmentPaymentsBinding
-import com.example.myapplication.domain.models.DomainPaymentList
+import com.example.myapplication.databinding.FragmentPostsBinding
+import com.example.myapplication.domain.models.DomainPost
 import com.example.myapplication.presentation.adapters.AccountTransactionsAdapter
 import com.example.myapplication.presentation.adapters.customItemDecoration.CustomItemDecoration
-import com.example.myapplication.presentation.view_models.PaymentViewModel
+import com.example.myapplication.presentation.view_models.PostViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class PaymentsFragment : Fragment() {
-    private var _binding: FragmentPaymentsBinding? = null
+class PostsFragment : Fragment() {
+    private var _binding: FragmentPostsBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: PaymentViewModel by viewModels()
+    private val viewModel: PostViewModel by viewModels()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPaymentsBinding.inflate(inflater, container, false)
+        _binding = FragmentPostsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecycler()
+        observePosts()
     }
 
-    private fun initRecycler() {
+    private fun observePosts() {
+        viewModel.postList.observe(viewLifecycleOwner) { posts ->
+            initRecycler(posts)
+        }
+    }
+
+    private fun initRecycler(posts: List<DomainPost>) {
         val customItemDecoration = CustomItemDecoration(requireContext())
-        val payments = viewModel.paymentList.value ?: DomainPaymentList()
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             addItemDecoration(customItemDecoration)
             adapter = AccountTransactionsAdapter(
-                payments,
+                items = posts,
                 event = {
-                    findNavController().navigate(R.id.action_PaymentsFragment_to_DetailsFragment)
-                }
-            )
-        }
+                    findNavController().navigate(R.id.action_PostsFragment_to_AboutPostFragment)
+                    }
+                )
+            }
     }
 }

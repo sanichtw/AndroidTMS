@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#B8B1B1"
     android:padding="5dp"
-    tools:context=".presentation.fragments.AboutPaymentFragment">
+    tools:context=".presentation.fragments.AboutPostFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"

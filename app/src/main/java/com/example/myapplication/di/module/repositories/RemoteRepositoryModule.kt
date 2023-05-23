@@ -1,7 +1,8 @@
 package com.example.myapplication.di.module.repositories
 
-import com.example.myapplication.data.repository.remote.PaymentsRemote
-import com.example.myapplication.data.repository.remote.PaymentsRemoteImpl
+import com.example.myapplication.data.remote.api.PostsApi
+import com.example.myapplication.data.repository.remote.PostsRemote
+import com.example.myapplication.data.repository.remote.PostsRemoteImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,5 +13,5 @@ import dagger.hilt.components.SingletonComponent
 class RemoteRepositoryModule {
 
     @Provides
-    fun providePaymentsRemote(): PaymentsRemote = PaymentsRemoteImpl()
+    fun providePostsRemote(postsApi: PostsApi): PostsRemote = PostsRemoteImpl(postsApi = postsApi)
 }
