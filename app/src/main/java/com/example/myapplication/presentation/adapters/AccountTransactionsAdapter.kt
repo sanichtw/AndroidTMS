@@ -17,9 +17,9 @@ class AccountTransactionsAdapter(
     RecyclerView.Adapter<AccountTransactionsAdapter.CustomViewHolder>(){
 
      class CustomViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-//        val imageView: ImageView = itemView.findViewById(R.id.icon)
+        val imageView: ImageView = itemView.findViewById(R.id.icon)
         val titleTextView: TextView = itemView.findViewById(R.id.title)
-        val descriptionTextView: TextView = itemView.findViewById(R.id.description)
+        val publishedAtTextView: TextView = itemView.findViewById(R.id.publishedAt)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -36,7 +36,7 @@ class AccountTransactionsAdapter(
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.apply {
             titleTextView.text = items[position].title
-            descriptionTextView.text = items[position].publishedAt
+            publishedAtTextView.text = items[position].publishedAt
         }
     }
 

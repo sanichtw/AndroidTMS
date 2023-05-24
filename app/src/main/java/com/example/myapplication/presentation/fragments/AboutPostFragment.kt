@@ -32,12 +32,12 @@ class AboutPostFragment : Fragment() {
     }
 
     private fun initDetailsInfo() {
-        val paymentInfo = viewModel.postInfo.value ?: DomainPost()
+        val postInfo = viewModel.postInfo.value ?: DomainPost()
 
         binding.apply {
-            paymentAboutTitle.text = paymentInfo.title
-            paymentAboutBody.text = paymentInfo.description
-//            paymentImage.setImageResource(paymentInfo.image)
+            paymentAboutTitle.text = postInfo.title
+            paymentAboutBody.text = postInfo.description
+//            paymentImage.setImageResource(postInfo.image)
         }
     }
 }
