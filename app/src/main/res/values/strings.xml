@@ -13,9 +13,11 @@
     <string name="login_button">Sign in</string>
     <string name="rememberMe_checkbox">Remember</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="test_login_fragment">Test Login Fragment</string>
     <string name="test_news_fragment">Test News Fragment</string>
     <string name="to_test_login_fragment">To Test Login Fragment</string>
     <string name="to_test_news_fragment">To News Login Fragment</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="coroutines_text">Coroutines Test Fragment</string>
 </resources>
