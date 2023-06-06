@@ -50,6 +50,7 @@ class PostsFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
             addItemDecoration(customItemDecoration)
             adapter = AccountTransactionsAdapter(
+                context = this@PostsFragment,
                 items = posts,
                 event = {
                     findNavController().navigate(R.id.action_PostsFragment_to_AboutPostFragment)

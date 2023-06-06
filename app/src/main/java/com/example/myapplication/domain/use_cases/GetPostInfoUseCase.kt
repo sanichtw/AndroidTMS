@@ -8,5 +8,5 @@ import javax.inject.Singleton
 class GetPostInfoUseCase @Inject constructor(
     private val postRepository: PostRepository
 ) {
-//    fun getPostInfo() = postRepository.getPosts().orEmpty()
+    suspend fun getPostInfo(postId: Long) = postRepository.getPostInfoFromLocal(postId)
 }

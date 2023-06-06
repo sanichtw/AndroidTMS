@@ -1,5 +1,6 @@
 package com.example.myapplication.data.remote.dto
 
+import com.example.myapplication.data.local.PostEntity
 import com.example.myapplication.domain.models.DomainPost
 import com.google.gson.annotations.SerializedName
 
@@ -22,6 +23,14 @@ data class PostDto(
     )
 
 fun PostDto.toDomainPost() = DomainPost(
+    title = title,
+    description = description,
+    url = url,
+    urlToImage = urlToImage,
+    publishedAt = publishedAt
+)
+
+fun PostDto.toLocalPost() = PostEntity(
     title = title,
     description = description,
     url = url,

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/LoginFragment">
+    app:startDestination="@id/PostsFragment">
 
     <fragment
         android:id="@+id/LoginFragment"
@@ -31,9 +31,9 @@
 
     <fragment
         android:id="@+id/AboutPostFragment"
-        android:name="com.example.myapplication.presentation.fragments.AboutPostFragment"
+        android:name="com.example.myapplication.presentation.fragments.PostInfoFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_about_post">
+        tools:layout="@layout/fragment_post_info">
 
         <action
             android:id="@+id/action_AboutPostFragment_to_PaymentsFragment"
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/CoroutinesTestFragment"
-        android:name="com.example.myapplication.presentation.fragments.CoroutinesTestFragment"
+        android:name="com.example.myapplication.presentation.fragments.testFragments.CoroutinesTestFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_coroutines_test">
     </fragment>

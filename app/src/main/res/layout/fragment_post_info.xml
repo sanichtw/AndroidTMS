@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#B8B1B1"
     android:padding="5dp"
-    tools:context=".presentation.fragments.AboutPostFragment">
+    tools:context=".presentation.fragments.PostInfoFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -20,13 +20,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/payment_image"
+            android:id="@+id/postInfoImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:contentDescription="@string/payment_about_image"
-            android:visibility="visible"
-            tools:src="@drawable/ic_launcher_new"
-            tools:visibility="visible" />
+            android:contentDescription="@string/payment_about_image"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -45,7 +42,7 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/paymentAboutTitle"
+                android:id="@+id/postInfoTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -55,7 +52,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/paymentAboutBody"
+                android:id="@+id/postInfoBody"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp" />

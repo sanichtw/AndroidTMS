@@ -10,7 +10,7 @@ import javax.inject.Singleton
 class PostsUseCase @Inject constructor(
     private val postRepository: PostRepository
 ) {
-    suspend fun getPosts() : List<DomainPost> = postRepository.getPosts().map { postDto ->
+    suspend fun getPosts(): List<DomainPost> = postRepository.getPosts().map { postDto ->
         postDto.toDomainPost()
     }
 }
