@@ -7,6 +7,17 @@
     android:id="@+id/fragment_login"
     tools:context=".presentation.fragments.LoginFragment">
 
+    <com.example.myapplication.presentation.custom.SmileView
+        android:id="@+id/emotionalFaceView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@id/email_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerInParent="true">
+    </com.example.myapplication.presentation.custom.SmileView>
+
     <EditText
         android:id="@+id/email_input"
         android:layout_width="match_parent"
