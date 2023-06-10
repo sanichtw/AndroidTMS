@@ -18,15 +18,16 @@ internal class SmileView(context: Context, attributes: AttributeSet) : View(cont
 
     private var paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    private var faceColor = Color.YELLOW
-    private var eyesColor = Color.BLACK
-    private var mouthColor = Color.BLACK
-    private var borderColor = Color.BLACK
+    private val faceColor = Color.YELLOW
+    private val eyesColor = Color.BLACK
+    private val mouthColor = Color.BLACK
+    private val borderColor = Color.BLACK
 
     private var borderWidth = 4.0f
 
     //TODO do homework?
     private var size = 320
+    private val radius = size / 2f
 
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -40,22 +41,19 @@ internal class SmileView(context: Context, attributes: AttributeSet) : View(cont
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        drawSmile(canvas)
+
+        drawFaceBackground(canvas)
+        drawEyes(canvas)
+        drawMouth(canvas)
     }
 
     private fun drawFaceBackground(canvas: Canvas) {
-        val radius = size / 2f
-
         paint.apply {
             color = faceColor
             style = Paint.Style.FILL
         }
 
-        canvas.drawCircle(
-            radius,
-            radius,
-            radius,
-            paint)
+        canvas.drawCircle(radius, radius, radius, paint)
 
         paint.apply {
             color = borderColor
@@ -63,11 +61,7 @@ internal class SmileView(context: Context, attributes: AttributeSet) : View(cont
             strokeWidth = borderWidth
         }
 
-        canvas.drawCircle(
-            radius,
-            radius,
-            radius - borderWidth / 2f,
-            paint)
+        canvas.drawCircle(radius, radius, radius - borderWidth / 2f, paint)
     }
 
     private fun drawEyes(canvas: Canvas) {
@@ -79,10 +73,11 @@ internal class SmileView(context: Context, attributes: AttributeSet) : View(cont
     }
 
     private fun drawMouth(canvas: Canvas) {
-        val mouthPath = Path()
-        mouthPath.moveTo(size * 0.22f, size * 0.7f)
-        mouthPath.quadTo(size * 0.50f, size * 0.80f, size * 0.78f, size * 0.70f)
-        mouthPath.quadTo(size * 0.50f, size * 0.90f, size * 0.22f, size * 0.70f)
+        val mouthPath = Path().apply {
+            moveTo(size * 0.22f, size * 0.7f)
+            quadTo(size * 0.50f, size * 0.80f, size * 0.78f, size * 0.70f)
+            quadTo(size * 0.50f, size * 0.90f, size * 0.22f, size * 0.70f)
+        }
 
         paint.apply {
             color = mouthColor
@@ -91,14 +86,10 @@ internal class SmileView(context: Context, attributes: AttributeSet) : View(cont
         canvas.drawPath(mouthPath, paint)
     }
 
-
     private fun drawEyesRect(canvas: Canvas) {
-        canvas.drawCircle(size / 4f, size / 4f, size / 4f, paint)
-    }
-
-    private fun drawSmile(canvas: Canvas) {
-        drawFaceBackground(canvas)
-        drawEyes(canvas)
-        drawMouth(canvas)
+        val leftEyeRect = RectF(size * 0.32f, size * 0.23f, size * 0.43f, size * 0.50f)
+        canvas.drawOval(leftEyeRect, paint)
+        val rightEyeRect = RectF(size * 0.57f, size * 0.23f, size * 0.68f, size * 0.50f)
+        canvas.drawOval(rightEyeRect, paint)
     }
 }
