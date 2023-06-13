@@ -18,6 +18,10 @@
     <string name="to_test_login_fragment">To Test Login Fragment</string>
     <string name="to_test_news_fragment">To News Login Fragment</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="coroutines_text">Coroutines Test Fragment</string>
+
+    <!-- Buttons -->
+    <string name="login_button_text">Login</string>
+    <string name="start_animation_button_text">Start</string>
+    <string name="clear_animation_button_text">Clear</string>
 </resources>
