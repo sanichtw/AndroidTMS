@@ -10,15 +10,16 @@ import com.bumptech.glide.Glide
 import com.example.myapplication.R
 import com.example.myapplication.domain.models.DomainPost
 import com.example.myapplication.presentation.fragments.PostsFragment
+import javax.inject.Singleton
 
-class AccountTransactionsAdapter(
+class PostsAdapter(
     private val context: PostsFragment,
     private val items: List<DomainPost>,
     private val event: (View) -> Unit
-    ):
-    RecyclerView.Adapter<AccountTransactionsAdapter.CustomViewHolder>(){
+) :
+    RecyclerView.Adapter<PostsAdapter.CustomViewHolder>() {
 
-     class CustomViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.icon)
         val titleTextView: TextView = itemView.findViewById(R.id.title)
         val publishedAtTextView: TextView = itemView.findViewById(R.id.publishedAt)
@@ -27,7 +28,7 @@ class AccountTransactionsAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val itemView = LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.transaction_items, parent, false)
+            .inflate(R.layout.posts_items, parent, false)
 
         itemView.setOnClickListener {
             event(it)

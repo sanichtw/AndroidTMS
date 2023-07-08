@@ -13,5 +13,6 @@ import dagger.hilt.components.SingletonComponent
 class RemoteRepositoryModule {
 
     @Provides
-    fun providePostsRemote(postsApi: PostsApi): PostsRemote = PostsRemoteImpl(postsApi = postsApi)
+    fun providePostsRemote(postsApi: PostsApi): PostsRemote =
+        PostsRemoteImpl(postsApi = postsApi)
 }

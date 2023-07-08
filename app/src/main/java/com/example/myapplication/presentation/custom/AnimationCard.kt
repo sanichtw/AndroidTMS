@@ -37,7 +37,7 @@ class AnimationCard @JvmOverloads constructor(
     private var rollingEndListener: (Int) -> Unit = {}
 
     init {
-        setWillNotDraw(false) //рисует линицю которую мы указали в инициализации перед анимацией
+        setWillNotDraw(false) // рисует линицю которую мы указали в инициализации перед анимацией
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

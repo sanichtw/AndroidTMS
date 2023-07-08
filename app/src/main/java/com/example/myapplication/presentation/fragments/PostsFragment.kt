@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentPostsBinding
 import com.example.myapplication.domain.models.DomainPost
-import com.example.myapplication.presentation.adapters.AccountTransactionsAdapter
+import com.example.myapplication.presentation.adapters.PostsAdapter
 import com.example.myapplication.presentation.adapters.customItemDecoration.CustomItemDecoration
 import com.example.myapplication.presentation.view_models.PostViewModel
 import dagger.hilt.android.AndroidEntryPoint
+
 
 
 @AndroidEntryPoint
@@ -22,7 +23,6 @@ class PostsFragment : Fragment() {
     private var _binding: FragmentPostsBinding? = null
     private val binding get() = _binding!!
     private val viewModel: PostViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +49,7 @@ class PostsFragment : Fragment() {
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             addItemDecoration(customItemDecoration)
-            adapter = AccountTransactionsAdapter(
+            adapter = PostsAdapter(
                 context = this@PostsFragment,
                 items = posts,
                 event = {
